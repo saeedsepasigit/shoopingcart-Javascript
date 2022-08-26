@@ -31,7 +31,7 @@ const renderShoppingCart = function () {
                   </td>
                   <td
                     class="text-right font-weight-semibold align-middle p-4 price">
-                    $${item.price}
+                    ${formatter.format(item.price).slice(0, -3)}
                   </td>
                   <td class="align-middle p-4">
                     <input
@@ -40,12 +40,14 @@ const renderShoppingCart = function () {
                       value="${item.numberOfUnits}"
                       data-id="${item.id}"
                       min="1"
-                      max="5"
+                      max="100"
                     />
                   </td>
                   <td id="${item.id}"
                     class="text-right font-weight-semibold align-middle p-4 total">
-                    $${item.numberOfUnits * item.price}
+                    ${formatter
+                      .format(item.numberOfUnits * item.price)
+                      .slice(0, -3)}
                   </td>
                   <td class="text-center align-middle px-0">
                     <a
@@ -82,7 +84,9 @@ const calcTotalPrice = function () {
     totalPrice += +item.price * +item.numberOfUnits;
     totalItems += item.numberOfUnits;
   });
-  totalPriceResult.innerHTML = `Total Price : <i class="fa-duotone fa-dollar-sign"></i> ${totalPrice.toFixed()} ( ${totalItems} items )`;
+  totalPriceResult.innerHTML = `Total Price : ${formatter
+    .format(totalPrice)
+    .slice(0, -3)} ( ${totalItems} items )`;
 };
 const calcQuantityPrice = function () {
   let quantity;
@@ -132,6 +136,11 @@ const changeNumberOfUnits = function (number, id) {
 
   renderShoppingCart();
 };
+
+const formatter = new Intl.NumberFormat('en-US', {
+  style: 'currency',
+  currency: 'USD',
+});
 const init = function () {
   loadShoppingCart();
   renderShoppingCart();
