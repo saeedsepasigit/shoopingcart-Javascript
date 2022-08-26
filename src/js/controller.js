@@ -23,6 +23,7 @@ const renderShoppingCart = function () {
                         class="d-block widthItemCart ui-w-40 ui-bordered mr-4"alt=""/>
                       <div class="media-body">
                         ${item.name}
+                        </br>
                         <small>
                           <span class="text-muted">${item.description}</span>
                         </small>
