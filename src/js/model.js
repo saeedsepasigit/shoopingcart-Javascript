@@ -7,6 +7,7 @@ const products = [
     image:
       'https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-13-pro-max-sierra-blue-back.png?v=5',
     price: 699,
+    color: 'blue',
   },
   {
     id: 1,
@@ -16,6 +17,7 @@ const products = [
     image:
       'https://www.pngkey.com/png/full/46-464516_macbook-air-support-mac-os-mojave-dark-mode.png',
     price: 1199,
+    color: 'gray',
   },
   {
     id: 2,
@@ -26,6 +28,7 @@ const products = [
     image:
       'https://www.pngmart.com/files/13/Airpods-Transparent-Images-PNG.png',
     price: 549,
+    color: 'white',
   },
   {
     id: 3,
@@ -35,6 +38,7 @@ const products = [
     image:
       'https://res.cloudinary.com/grover/image/upload/e_trim/f_auto,q_auto/v1600694108/zb3ues5m4bgizsgy6lkx.png',
     price: 279,
+    color: 'white',
   },
 ];
 

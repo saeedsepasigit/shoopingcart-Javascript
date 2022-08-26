@@ -28,6 +28,11 @@ const renderShoppingCart = function () {
                         </br>
                         <small>
                           <span class="text-muted">${item.description}</span>
+                          </br>
+                          <span class="text-muted">Color:</span>
+                            <span class="ui-product-color ui-product-color-sm align-text-bottom" style="background-color:${
+                              item.color
+                            };"></span>
                         </small>
                       </div>
                     </div>
