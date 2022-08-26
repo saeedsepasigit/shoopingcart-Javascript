@@ -4,15 +4,14 @@ const products = [
     name: 'Iphone 14 Pro Max',
     description: 'Made in America',
     image:
-      'https://store.storeimages.cdn-apple.com/4668/as-images.apple.com/is/iphone-13-pro-max-green-witb-202203_FMT_WHH?wid=560&hei=744&fmt=jpeg&qlt=90&.v=1645651710014',
+      'https://assets.swappie.com/cdn-cgi/image/width=600,height=600,fit=contain,format=auto/swappie-iphone-13-pro-max-sierra-blue-back.png?v=5',
     price: 699,
   },
   {
     id: 1,
     name: 'MacBook Air',
     description: 'Made in America',
-    image:
-      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/macbook-air-space-gray-select-201810?wid=904&hei=840&fmt=jpeg&qlt=90&.v=1633027804000',
+    image: 'https://cdn01.zoomit.ir/2020/11/macbook-air-13-m1-front.jpg?w=200',
     price: 1199,
   },
   {
@@ -20,7 +19,7 @@ const products = [
     name: 'AirPods 3rd Generation',
     description: 'Made in America',
     image:
-      'https://ertebathamrah.com/wp-content/uploads/2021/05/AirPods-3rd-generation.jpg',
+      'https://www.pngmart.com/files/13/Airpods-Transparent-Images-PNG.png',
     price: 549,
   },
   {
@@ -28,7 +27,7 @@ const products = [
     name: 'Apple Watch Series 7',
     description: 'Made in America',
     image:
-      'https://store.storeimages.cdn-apple.com/4982/as-images.apple.com/is/42-alu-silver-sport-white-nc-s3-grid?wid=540&hei=550&fmt=jpeg&qlt=90&.v=1594259786000',
+      'https://res.cloudinary.com/grover/image/upload/e_trim/f_auto,q_auto/v1600694108/zb3ues5m4bgizsgy6lkx.png',
     price: 279,
   },
 ];

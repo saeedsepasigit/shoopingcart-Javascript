@@ -35,10 +35,12 @@ const renderShoppingCart = function () {
                   </td>
                   <td class="align-middle p-4">
                     <input
-                      type="text"
+                      type="number"
                       class="form-control text-center quantity"
                       value="${item.numberOfUnits}"
                       data-id="${item.id}"
+                      min="1"
+                      max="5"
                     />
                   </td>
                   <td id="${item.id}"
@@ -82,7 +84,7 @@ const calcTotalPrice = function () {
 const calcQuantityPrice = function () {
   let quantity;
   let price;
-  document.querySelector('#tblProduct').addEventListener('keyup', function (e) {
+  document.querySelector('#tblProduct').addEventListener('click', function (e) {
     if (e.target.classList.contains('quantity')) {
       quantity = e.target.value;
       let rowId = +e.target.dataset.id;
