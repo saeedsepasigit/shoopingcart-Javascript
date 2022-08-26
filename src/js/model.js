@@ -11,7 +11,8 @@ const products = [
     id: 1,
     name: 'MacBook Air',
     description: 'Made in America',
-    image: 'https://cdn01.zoomit.ir/2020/11/macbook-air-13-m1-front.jpg?w=200',
+    image:
+      'https://www.pngkey.com/png/full/46-464516_macbook-air-support-mac-os-mojave-dark-mode.png',
     price: 1199,
   },
   {

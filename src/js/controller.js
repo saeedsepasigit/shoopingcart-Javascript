@@ -20,7 +20,7 @@ const renderShoppingCart = function () {
                     <div class="media align-items-center">
                       <img
                         src="${item.image}"
-                        class="d-block ui-w-40 ui-bordered mr-4"alt=""/>
+                        class="d-block widthItemCart ui-w-40 ui-bordered mr-4"alt=""/>
                       <div class="media-body">
                         ${item.name}
                         <small>
@@ -31,7 +31,7 @@ const renderShoppingCart = function () {
                   </td>
                   <td
                     class="text-right font-weight-semibold align-middle p-4 price">
-                    ${item.price}
+                    $${item.price}
                   </td>
                   <td class="align-middle p-4">
                     <input
@@ -45,15 +45,18 @@ const renderShoppingCart = function () {
                   </td>
                   <td id="${item.id}"
                     class="text-right font-weight-semibold align-middle p-4 total">
-                    ${item.numberOfUnits * item.price}
+                    $${item.numberOfUnits * item.price}
                   </td>
                   <td class="text-center align-middle px-0">
                     <a
                       href="#"
-                      class="shop-tooltip close float-none text-danger remove"
+                      class="shop-tooltip close float-none text-danger"
                       title="Delete Item"
-                      data-id="${item.id}"
-                      >×</a
+                      >
+                      <i data-id="${
+                        item.id
+                      }" class="fa fa-trash remove" aria-hidden="true" ></i>
+                      </a
                     >
                   </td>
                 </tr>
@@ -79,7 +82,7 @@ const calcTotalPrice = function () {
     totalPrice += +item.price * +item.numberOfUnits;
     totalItems += item.numberOfUnits;
   });
-  totalPriceResult.innerHTML = `Total Price : $${totalPrice.toFixed()} ( ${totalItems} items )`;
+  totalPriceResult.innerHTML = `Total Price : <i class="fa-duotone fa-dollar-sign"></i> ${totalPrice.toFixed()} ( ${totalItems} items )`;
 };
 const calcQuantityPrice = function () {
   let quantity;
