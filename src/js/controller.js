@@ -1,11 +1,9 @@
 import * as model from './model.js';
-
 const tblProduct = document.querySelector('#tblProduct');
 const tblProducttd = document.querySelector('#tblProducttd');
 const totalPriceResult = document.querySelector('.totalprice');
 let cartData = model.Products();
 let cart = [];
-
 const loadShoppingCart = function () {
   cartData.forEach(item => {
     cart.push({ ...item, numberOfUnits: 1, totalPrice: 0 });
@@ -18,8 +16,7 @@ const renderShoppingCart = function () {
     <tr class="shoprow">
                   <td class="p-4">
                     <div class="media align-items-center">
-                      
-                        <a href="" class="zoomBlur">
+                        <a href="" title="${item.name}" class="zoomBlur">
                         <img
                         src="${item.image}"
                         class="d-block widthItemCart ui-w-40 ui-bordered mr-4 "alt="${
@@ -37,7 +34,7 @@ const renderShoppingCart = function () {
                   </td>
                   <td
                     class="text-right font-weight-semibold align-middle p-4 price">
-                    ${formatter.format(item.price).slice(0, -3)}
+                    ${formatCurrencyToUsd.format(item.price).slice(0, -3)}
                   </td>
                   <td class="align-middle p-4">
                     <input
@@ -51,7 +48,7 @@ const renderShoppingCart = function () {
                   </td>
                   <td id="${item.id}"
                     class="text-right font-weight-semibold align-middle p-4 total">
-                    ${formatter
+                    ${formatCurrencyToUsd
                       .format(item.numberOfUnits * item.price)
                       .slice(0, -3)}
                   </td>
@@ -59,7 +56,7 @@ const renderShoppingCart = function () {
                     <a
                       href="#"
                       class="shop-tooltip close float-none text-danger"
-                      title="Delete Item"
+                      title="Delete Product"
                       >
                       <i data-id="${
                         item.id
@@ -90,9 +87,9 @@ const calcTotalPrice = function () {
     totalPrice += +item.price * +item.numberOfUnits;
     totalItems += item.numberOfUnits;
   });
-  totalPriceResult.innerHTML = `Total Price : ${formatter
+  totalPriceResult.innerHTML = `Total Price : ${formatCurrencyToUsd
     .format(totalPrice)
-    .slice(0, -3)} ( ${totalItems} items )`;
+    .slice(0, -3)} ( ${totalItems} Product )`;
 };
 const calcQuantityPrice = function () {
   let quantity;
@@ -142,8 +139,7 @@ const changeNumberOfUnits = function (number, id) {
 
   renderShoppingCart();
 };
-
-const formatter = new Intl.NumberFormat('en-US', {
+const formatCurrencyToUsd = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
 });
