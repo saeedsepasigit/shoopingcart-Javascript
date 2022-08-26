@@ -24,7 +24,6 @@ const products = [
   {
     id: 2,
     name: 'AirPods 3rd Generation',
-    description: 'AirPods 3rd Generation',
     description:
       'Spatial audio with dynamic head tracking places sounds all around you to create a three-dimensional listening experience for music TV shows, movies, and more.',
     image:
