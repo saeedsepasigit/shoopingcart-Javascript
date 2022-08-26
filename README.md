@@ -1,4 +1,13 @@
 # shoopingcart-Javascript
-Shopping cart design using JavaScript and objects
+
+## Project setup
+
+```
 npm install
+```
+
+### Compiles and run
+
+```
 npm start
+```
