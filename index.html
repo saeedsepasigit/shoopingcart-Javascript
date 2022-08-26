@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script type="module" defer src="src/js/controller.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <link href="./src/css/main.css" rel="stylesheet" />
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.1.1/dist/js/bootstrap.bundle.min.js"></script>
+    <link rel="shortcut icon" type="image/png" href="./src/img/favicon.png" />
+    <title>Rasha Tasks</title>
+  </head>
+  <body>
+    <div class="container px-3 my-5 clearfix">
+      <div class="card">
+        <div class="card-header">
+          <h2>Shopping Cart</h2>
+        </div>
+        <div class="card-body shoppcart">
+          <div class="table-responsive">
+            <table
+              class="table table-bordered table-light table-striped table-hover m-0"
+              id="tblProduct"
+            >
+              <thead>
+                <tr>
+                  <th class="text-center py-3 px-4" style="min-width: 400px">
+                    Product Name &amp; Description
+                  </th>
+                  <th class="text-right py-3 px-4" style="width: 100px">
+                    Price
+                  </th>
+                  <th class="text-center py-3 px-4" style="width: 120px">
+                    Quantity
+                  </th>
+                  <th class="text-right py-3 px-4" style="width: 80px">
+                    Total
+                  </th>
+                  <th
+                    class="text-center align-middle py-3 px-0"
+                    style="width: 60px"
+                  >
+                    Delete
+                    <a
+                      href="#"
+                      class="shop-tooltip float-none text-light"
+                      title="Delete"
+                      data-original-title="Clear cart"
+                      ><i class="ino ion-md-trash"></i
+                    ></a>
+                  </th>
+                </tr>
+              </thead>
+              <tbody id="tblProducttd"></tbody>
+            </table>
+          </div>
+        </div>
+        <div class="card-footer">
+          <div class="row">
+            <div class="col-md-6 text-left">
+              <div class="text-large">
+                <button
+                  type="button"
+                  class="totalprice btn btn-success md-btn-flat mt-2 mr-3 disabled"
+                ></button>
+              </div>
+            </div>
+            <div class="col-md-6 text-right">
+              <div class="text-large">
+                <button
+                  type="button"
+                  class="btn btn-primary md-btn-flat mt-2 mr-3 btndeletecart"
+                >
+                  Clear Shopping Cart
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

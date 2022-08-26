@@ -1,0 +1,16 @@
+{
+  "name": "rasha-task",
+  "version": "1.0.0",
+  "description": "rasha task",
+  "default": "index.html",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html --dist-dir ./dist"
+  },
+  "author": "Saeed Sepasi",
+  "license": "ISC",
+  "dependencies": {},
+  "devDependencies": {
+    "parcel": "^2.7.0"
+  }
+}
