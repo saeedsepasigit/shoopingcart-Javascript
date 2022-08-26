@@ -2,6 +2,8 @@ import * as model from './model.js';
 const tblProduct = document.querySelector('#tblProduct');
 const tblProducttd = document.querySelector('#tblProducttd');
 const totalPriceResult = document.querySelector('.totalprice');
+const totalPriceBadge = document.querySelector('.badge');
+
 let cartData = model.Products();
 let cart = [];
 const loadShoppingCart = function () {
@@ -16,13 +18,13 @@ const renderShoppingCart = function () {
     <tr class="shoprow">
                   <td class="p-4">
                     <div class="media align-items-center">
-                        <a href="" title="${item.name}" class="zoomBlur">
+                        <div title="${item.name}" class="zoomBlur">
                         <img
                         src="${item.image}"
                         class="d-block widthItemCart ui-w-40 ui-bordered mr-4 "alt="${
                           item.name
                         }"/>
-                        </a>
+                        </div>
                       <div class="media-body">
                         ${item.name}
                         </br>
@@ -99,6 +101,7 @@ const calcTotalPrice = function () {
   totalPriceResult.innerHTML = `Total Price : ${formatCurrencyToUsd
     .format(totalPrice)
     .slice(0, -3)} ( ${totalItems} Product )`;
+  totalPriceBadge.innerHTML = totalItems;
 };
 const calcQuantityPrice = function () {
   let quantity;
@@ -113,7 +116,7 @@ const calcQuantityPrice = function () {
           .filter(item => item.id === rowId)
           .map(item => item.price * quantity);
         document.getElementById(`${rowId}`).innerHTML = tempData;
-        changeNumberOfUnits(quantity, rowId);
+        changeNumberOfQuantity(quantity, rowId);
         renderShoppingCart();
         calcTotalPrice();
       } else {
@@ -130,9 +133,10 @@ const clearShoppingCart = function () {
       tblProducttd.innerHTML = ' ';
       tblProduct.innerHTML = 'There is nothing in your shopping cart.';
       totalPriceResult.innerHTML = '0';
+      totalPriceBadge.innerHTML = '0';
     });
 };
-const changeNumberOfUnits = function (number, id) {
+const changeNumberOfQuantity = function (number, id) {
   cart = cart.map(item => {
     let numberOfUnits = item.numberOfUnits;
     if (item.id === id) {
