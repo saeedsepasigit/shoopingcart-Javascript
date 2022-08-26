@@ -25,3 +25,9 @@ body {
 .widthItemCart {
   width: 90px !important;
 }
+
+.zoomBlur :hover {
+  -webkit-filter: blur(0.8px) !important; /* Safari 6.0 - 9.0 */
+  filter: blur(0.8px) !important;
+  transform: scale(1.1);
+}

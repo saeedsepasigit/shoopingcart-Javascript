@@ -18,9 +18,14 @@ const renderShoppingCart = function () {
     <tr class="shoprow">
                   <td class="p-4">
                     <div class="media align-items-center">
-                      <img
+                      
+                        <a href="" class="zoomBlur">
+                        <img
                         src="${item.image}"
-                        class="d-block widthItemCart ui-w-40 ui-bordered mr-4"alt=""/>
+                        class="d-block widthItemCart ui-w-40 ui-bordered mr-4 "alt="${
+                          item.name
+                        }"/>
+                        </a>
                       <div class="media-body">
                         ${item.name}
                         </br>

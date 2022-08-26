@@ -37,27 +37,18 @@
         <div class="card-body shoppcart">
           <div class="table-responsive">
             <table
-              class="table table-bordered table-light table-striped table-hover m-0"
+              class="table table-bordered align-middle table-sm table-light table-striped table-hover table-responsive m-0"
               id="tblProduct"
             >
-              <thead>
+              <thead class="table-light">
                 <tr>
-                  <th class="text-center py-3 px-4" style="min-width: 400px">
-                    Item Name &amp; Description
+                  <th class="text-center py-3 px-4" style="width: 100%">
+                    Product &amp; Description
                   </th>
-                  <th class="text-right py-3 px-4" style="width: 100px">
-                    Price
-                  </th>
-                  <th class="text-center py-3 px-4" style="width: 120px">
-                    Quantity
-                  </th>
-                  <th class="text-right py-3 px-4" style="width: 80px">
-                    Total
-                  </th>
-                  <th
-                    class="text-center align-middle py-3 px-0"
-                    style="width: 60px"
-                  >
+                  <th class="text-right py-3 px-4">Price</th>
+                  <th class="text-center py-3 px-4">Quantity</th>
+                  <th class="text-right py-3 px-4">Total</th>
+                  <th class="text-center align-middle py-3 px-0">
                     Delete
                     <a
                       href="#"
@@ -79,7 +70,7 @@
               <div class="text-large">
                 <button
                   type="button"
-                  class="btn btn-primary alert alert-dark bg-primary md-btn-flat mt-2 mr-3 btndeletecart"
+                  class="btn btn-primary text-white alert alert-dark bg-primary md-btn-flat mt-2 mr-3 btndeletecart"
                 >
                   <i class="fa fa-trash remove"></i>
                   Clear Shopping Cart
@@ -92,6 +83,13 @@
                   type="button"
                   class="totalprice alert alert-primary md-btn-flat mt-2 mr-3 disabled"
                 ></button>
+                <button
+                  type="button"
+                  class="btn btn-primary text-white alert alert-dark bg-primary md-btn-flat mt-2 mr-3"
+                >
+                  <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                  Continue shopping
+                </button>
               </div>
             </div>
           </div>
