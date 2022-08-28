@@ -6,12 +6,12 @@ const totalPriceBadge = document.querySelector('.badge');
 
 let cartData = model.Products();
 let cart = [];
-const loadShoppingCart = function () {
+const loadShoppingCart = () => {
   cartData.forEach(item => {
     cart.push({ ...item, numberOfUnits: 1, totalPrice: 0 });
   });
 };
-const renderShoppingCart = function () {
+const renderShoppingCart = () => {
   tblProducttd.innerHTML = ' ';
   cart.forEach(item => {
     let cartRow = `
@@ -81,7 +81,7 @@ const renderShoppingCart = function () {
     tblProducttd.insertAdjacentHTML('beforeend', cartRow);
   });
 };
-const removeItemFromShoppingCart = function () {
+const removeItemFromShoppingCart = () => {
   document.querySelector('#tblProduct').addEventListener('click', function (e) {
     if (e.target.classList.contains('remove')) {
       let rowId = +e.target.dataset.id;
@@ -91,7 +91,7 @@ const removeItemFromShoppingCart = function () {
     }
   });
 };
-const calcTotalPrice = function () {
+const calcTotalPrice = () => {
   let totalPrice = 0,
     totalItems = 0;
   cart.forEach(item => {
@@ -103,7 +103,7 @@ const calcTotalPrice = function () {
     .slice(0, -3)} ( ${totalItems} Product )`;
   totalPriceBadge.innerHTML = totalItems;
 };
-const calcQuantityPrice = function () {
+const calcQuantityPrice = () => {
   let quantity;
   let price;
   document.querySelector('#tblProduct').addEventListener('click', function (e) {
@@ -126,7 +126,7 @@ const calcQuantityPrice = function () {
     }
   });
 };
-const clearShoppingCart = function () {
+const clearShoppingCart = () => {
   document
     .querySelector('.btndeletecart')
     .addEventListener('click', function () {
@@ -136,7 +136,7 @@ const clearShoppingCart = function () {
       totalPriceBadge.innerHTML = '0';
     });
 };
-const changeNumberOfQuantity = function (number, id) {
+const changeNumberOfQuantity = (number, id) => {
   cart = cart.map(item => {
     let numberOfUnits = item.numberOfUnits;
     if (item.id === id) {
@@ -156,7 +156,7 @@ const formatCurrencyToUsd = new Intl.NumberFormat('en-US', {
   style: 'currency',
   currency: 'USD',
 });
-const init = function () {
+const init = () => {
   loadShoppingCart();
   renderShoppingCart();
   removeItemFromShoppingCart();
