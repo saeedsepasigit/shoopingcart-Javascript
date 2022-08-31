@@ -1,6 +1,6 @@
 import * as model from './model.js';
-const tblProduct = document.querySelector('#tblProduct');
-const tblProducttd = document.querySelector('#tblProducttd');
+const shoppingCart = document.querySelector('#shoppingCart');
+const shoppingCartItem = document.querySelector('#shoppingCartItem');
 const totalPriceResult = document.querySelector('.totalprice');
 const totalPriceBadge = document.querySelector('.badge');
 
@@ -12,7 +12,7 @@ const loadShoppingCart = () => {
   });
 };
 const renderShoppingCart = () => {
-  tblProducttd.innerHTML = ' ';
+  shoppingCartItem.innerHTML = ' ';
   cart.forEach(item => {
     let cartRow = `
     <tr class="shoprow">
@@ -78,18 +78,20 @@ const renderShoppingCart = () => {
                 </tr>
     
     `;
-    tblProducttd.insertAdjacentHTML('beforeend', cartRow);
+    shoppingCartItem.insertAdjacentHTML('beforeend', cartRow);
   });
 };
 const removeItemFromShoppingCart = () => {
-  document.querySelector('#tblProduct').addEventListener('click', function (e) {
-    if (e.target.classList.contains('remove')) {
-      let rowId = +e.target.dataset.id;
-      cart = cart.filter(item => item.id !== rowId);
-      renderShoppingCart();
-      calcTotalPrice();
-    }
-  });
+  document
+    .querySelector('#shoppingCart')
+    .addEventListener('click', function (e) {
+      if (e.target.classList.contains('remove')) {
+        let rowId = +e.target.dataset.id;
+        cart = cart.filter(item => item.id !== rowId);
+        renderShoppingCart();
+        calcTotalPrice();
+      }
+    });
 };
 const calcTotalPrice = () => {
   let totalPrice = 0,
@@ -106,32 +108,34 @@ const calcTotalPrice = () => {
 const calcQuantityPrice = () => {
   let quantity;
   let price;
-  document.querySelector('#tblProduct').addEventListener('click', function (e) {
-    if (e.target.classList.contains('quantity')) {
-      quantity = e.target.value;
-      let rowId = +e.target.dataset.id;
-      let tempData;
-      if (quantity > 0) {
-        tempData = cart
-          .filter(item => item.id === rowId)
-          .map(item => item.price * quantity);
-        document.getElementById(`${rowId}`).innerHTML = tempData;
-        changeNumberOfQuantity(quantity, rowId);
-        renderShoppingCart();
-        calcTotalPrice();
-      } else {
-        alert('Please enter a number greater than zero.');
-        e.target.value = 1;
+  document
+    .querySelector('#shoppingCart')
+    .addEventListener('click', function (e) {
+      if (e.target.classList.contains('quantity')) {
+        quantity = e.target.value;
+        let rowId = +e.target.dataset.id;
+        let tempData;
+        if (quantity > 0) {
+          tempData = cart
+            .filter(item => item.id === rowId)
+            .map(item => item.price * quantity);
+          document.getElementById(`${rowId}`).innerHTML = tempData;
+          changeNumberOfQuantity(quantity, rowId);
+          renderShoppingCart();
+          calcTotalPrice();
+        } else {
+          alert('Please enter a number greater than zero.');
+          e.target.value = 1;
+        }
       }
-    }
-  });
+    });
 };
 const clearShoppingCart = () => {
   document
     .querySelector('.btndeletecart')
     .addEventListener('click', function () {
-      tblProducttd.innerHTML = ' ';
-      tblProduct.innerHTML = 'There is nothing in your shopping cart.';
+      shoppingCartItem.innerHTML = ' ';
+      shoppingCart.innerHTML = 'There is nothing in your shopping cart.';
       totalPriceResult.innerHTML = '0';
       totalPriceBadge.innerHTML = '0';
     });
